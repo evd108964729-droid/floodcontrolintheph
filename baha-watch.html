@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Baha Watch: The Philippines Flood Control Blog</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{--deep:#06214a;--navy:#0b3a82;--blue:#1769d6;--sky:#8cc4ff;--mist:#eaf3ff;--ink:#0c1d38;--bg:#f5f9ff;--card:#fff;--line:#c9defa;--muted:#46597a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#061326;--card:#0c2447;--ink:#e6f0ff;--line:#1c3e72;--muted:#9db6dc;--mist:#0a1d3a}}
+:root[data-theme="dark"]{--bg:#061326;--card:#0c2447;--ink:#e6f0ff;--line:#1c3e72;--muted:#9db6dc;--mist:#0a1d3a}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+header.site{background:var(--deep);color:#fff}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:16px 0;flex-wrap:wrap;gap:8px}
+.logo{font-family:Fraunces,serif;font-weight:800;font-size:1.3rem}
+nav a{color:var(--sky);text-decoration:none;margin-left:18px;font-weight:600}
+nav a:hover{color:#fff}
+.hero{background:linear-gradient(180deg,var(--deep),var(--navy));color:#fff;padding:56px 0 110px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);max-width:15ch;font-weight:800}
+.hero p{max-width:52ch;color:#cfe3ff;font-size:1.15rem;margin:18px 0 0}
+.waves{position:absolute;left:0;bottom:-1px;width:200%;height:70px;animation:drift 18s linear infinite}
+@keyframes drift{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.waves{animation:none}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:-40px 0 48px;position:relative}
+.stat{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--blue);border-radius:6px;padding:16px 18px}
+.stat b{display:block;font-family:Fraunces,serif;font-size:1.6rem;color:var(--blue)}
+.stat span{color:var(--muted);font-size:.95rem}
+h2.sec{font-size:1.9rem;margin:0 0 20px;color:var(--navy)}
+@media (prefers-color-scheme:dark){h2.sec{color:var(--sky)}}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px;display:flex;flex-direction:column}
+.post.lead{grid-column:1/-1;background:var(--navy);color:#fff;border:0}
+.post.lead p{color:#d6e7ff}
+.post .meta{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+.post.lead .meta{color:var(--sky)}
+.post h3{font-size:1.35rem;margin-bottom:10px}
+.post.lead h3{font-size:2rem}
+.post p{margin:0 0 14px;color:var(--muted)}
+button.more{margin-top:auto;align-self:flex-start;background:var(--blue);color:#fff;border:0;border-radius:4px;padding:8px 14px;font:600 1rem "Source Sans 3",sans-serif;cursor:pointer}
+button.more:hover{background:#0f56b3}
+.full{display:none;margin-top:14px;border-top:1px solid var(--line);padding-top:14px}
+.post.open .full{display:block}
+.post.lead .full{border-color:#2c5aa3}
+.timeline{margin:56px 0;border-left:4px solid var(--blue);padding-left:22px}
+.timeline div{margin-bottom:22px}
+.timeline b{font-family:Fraunces,serif;color:var(--blue);font-size:1.1rem}
+.timeline p{margin:2px 0 0;color:var(--muted)}
+.help{background:var(--mist);border:1px solid var(--line);border-radius:6px;padding:24px;margin-bottom:56px}
+.help ul{margin:10px 0 0;padding-left:20px}
+footer{background:var(--deep);color:#a9c8f5;padding:28px 0;font-size:.95rem}
+.block{margin:56px 0}
+.gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+details{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 16px}
+summary{cursor:pointer;font-weight:600;color:var(--navy)}
+@media (prefers-color-scheme:dark){summary{color:var(--sky)}}
+details p{margin:8px 0 0;color:var(--muted)}
+.q{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px;margin-bottom:14px}
+.q p{margin:0 0 10px;font-weight:600}
+.q button.opt{display:block;width:100%;text-align:left;background:var(--mist);color:var(--ink);border:2px solid var(--line);border-radius:6px;padding:10px 12px;margin-bottom:8px;font:1rem "Source Sans 3",sans-serif;cursor:pointer}
+.q button.opt:hover:not(:disabled){border-color:var(--blue)}
+.q button.opt.right{background:#d5ecff;border-color:#1769d6;color:#06214a}
+.q button.opt.wrong{border-style:dashed;border-color:#6b7f9e}
+.q .fb{margin:6px 0 0;color:var(--muted);font-weight:400}
+#score{font-weight:600;color:var(--blue);font-size:1.1rem}
+.teach{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--blue);border-radius:6px;padding:24px}
+.teach h3{margin:22px 0 6px;color:var(--navy);font-size:1.2rem}
+@media (prefers-color-scheme:dark){.teach h3{color:var(--sky)}}
+.note{background:var(--mist);border-left:4px solid var(--blue);padding:12px 14px;margin:18px 0}
+@media print{header.site,.hero,.stats,#posts,.posts,.timeline,#words,#quiz,.help,footer,#printbtn{display:none!important}body{background:#fff;color:#000}.teach{border:0}}
+.card-c{display:flex;gap:20px;align-items:center;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--blue);border-radius:6px;padding:22px;flex-wrap:wrap}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font:800 1.5rem Fraunces,serif;flex:none}
+.card-c h3{font-size:1.5rem;color:var(--navy)}
+@media (prefers-color-scheme:dark){.card-c h3{color:var(--sky)}}
+.card-c p{margin:4px 0}
+.card-c .small{color:var(--muted);font-size:.95rem}
+@media print{#contact{display:none!important}}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap bar"><span class="logo">Baha Watch</span><nav><a href="#posts">Posts</a><a href="#timeline">Timeline</a><a href="#words">Key words</a><a href="#quiz">Quiz</a><a href="#teachers">Teachers</a><a href="#contact">Contact</a></nav></div></header>
+
+<section class="hero"><div class="wrap">
+<h1>Where did the flood control money go?</h1>
+<p>A plain-language blog following the flood control corruption scandal in the Philippines: what happened, who is affected, and what accountability could look like. Made for students to learn from and teachers to use in class.</p>
+<p style="margin-top:12px"><a href="#quiz" style="color:#fff;font-weight:600">Students: start with the quiz</a> &nbsp;|&nbsp; <a href="#teachers" style="color:#fff;font-weight:600">Teachers: get the lesson plan</a></p>
+</div>
+<svg class="waves" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 35 Q150 0 300 35 T600 35 T900 35 T1200 35 V70 H0Z" fill="#f5f9ff"/></svg>
+</section>
+
+<main class="wrap">
+<div class="stats">
+<div class="stat"><b>~₱545B</b><span>Reported flood control funding, 2022 to 2025</span></div>
+<div class="stat"><b>20+</b><span>Typhoons enter the Philippine area each year</span></div>
+<div class="stat"><b>Millions</b><span>Filipinos in flood-prone communities</span></div>
+</div>
+
+<h2 class="sec" id="posts">Latest posts</h2>
+<div class="posts">
+<article class="post lead">
+<div class="meta">Explainer</div>
+<h3>The scandal in one page</h3>
+<p>In 2025, reports of "ghost" and substandard flood control projects pushed the issue into national debate. Public works contracts, budget insertions and contractor ties came under scrutiny.</p>
+<button class="more" aria-expanded="false">Read more</button>
+<div class="full"><p>The Philippines spends heavily on flood control because it faces typhoons, monsoon rains and low-lying river basins. Investigations and news reports alleged that some projects were never built, were poorly built, or were paid for at inflated cost. Lawmakers, public works officials and contractors were named in public hearings, and an independent commission was set up to look into infrastructure irregularities. Cases and investigations continue, so check current news for the latest status.</p></div>
+</article>
+
+<article class="post">
+<div class="meta">Why it matters</div>
+<h3>Floods hit the poor hardest</h3>
+<p>Weak drainage and failed embankments mean repeated flooding in homes, farms and schools.</p>
+<button class="more" aria-expanded="false">Read more</button>
+<div class="full"><p>Informal settlements and farming towns often sit closest to rivers. When flood walls fail or pumps do not work, families lose belongings, income and sometimes lives. Corruption in these projects is not only a budget issue. It is a safety issue.</p></div>
+</article>
+
+<article class="post">
+<div class="meta">How it works</div>
+<h3>How a project is supposed to be checked</h3>
+<p>Bidding, inspection and public reporting are the safeguards. The question is whether they worked.</p>
+<button class="more" aria-expanded="false">Read more</button>
+<div class="full"><p>Projects normally pass through budget approval, procurement and bidding, construction, and audit. Critics say gaps at each stage, from thin oversight to cozy contractor relationships, let problems slip through. Reform ideas include open project maps, independent inspection and stronger audit follow-up.</p></div>
+</article>
+
+<article class="post">
+<div class="meta">Public response</div>
+<h3>Citizens ask for receipts</h3>
+<p>Protests, online reporting tools and student groups pushed for names, records and charges.</p>
+<button class="more" aria-expanded="false">Read more</button>
+<div class="full"><p>Large rallies in 2025 demanded accountability. Citizens also began checking project sites themselves and sharing photos of unfinished or missing structures. Transparency advocates say sustained public attention is what keeps investigations moving.</p></div>
+</article>
+
+<article class="post">
+<div class="meta">Solutions</div>
+<h3>Beyond walls: smarter flood control</h3>
+<p>Experts urge drainage upgrades, watershed protection and local planning alongside concrete structures.</p>
+<button class="more" aria-expanded="false">Read more</button>
+<div class="full"><p>Mangrove and forest protection, river dredging that is verified, early warning systems and better land-use rules can reduce flooding. Spending should be matched to risk maps and measured by outcomes, not only by the number of projects completed.</p></div>
+</article>
+</div>
+
+<section class="timeline" id="timeline" aria-label="Timeline">
+<h2 class="sec">How the story unfolded</h2>
+<div><b>July 2025</b><p>The President's State of the Nation Address calls out faulty flood control projects.</p></div>
+<div><b>Aug to Sept 2025</b><p>Reports of ghost projects and contractor links spread. Congressional and Senate hearings begin.</p></div>
+<div><b>Sept 2025</b><p>An independent commission is created to investigate infrastructure projects, and mass rallies are held.</p></div>
+<div><b>After</b><p>Investigations, filings and policy debates continue. Follow trusted news for updates.</p></div>
+</section>
+
+<section id="words" class="block">
+<h2 class="sec">Key words to know</h2>
+<div class="gloss">
+<details><summary>Flood control</summary><p>Structures and systems that reduce flooding, such as dikes, drainage, pumps and river walls.</p></details>
+<details><summary>Ghost project</summary><p>A project that was paid for but, according to reports, was never built.</p></details>
+<details><summary>Substandard</summary><p>Built with poor quality, so it may fail when it is needed most.</p></details>
+<details><summary>Corruption</summary><p>Misusing public money or power for private gain.</p></details>
+<details><summary>Procurement</summary><p>The process a government uses to buy goods or hire builders, usually through bidding.</p></details>
+<details><summary>Accountability</summary><p>Being answerable for your actions, and facing consequences if you broke the rules.</p></details>
+<details><summary>Transparency</summary><p>Making records open so citizens can check how public money is used.</p></details>
+</div>
+</section>
+
+<section id="quiz" class="block">
+<h2 class="sec">Check your understanding</h2>
+<div id="quizbox"></div>
+<p id="score" role="status" aria-live="polite"></p>
+</section>
+
+<section id="teachers" class="block teach">
+<h2 class="sec">For teachers</h2>
+<p>A ready-to-use 45 to 60 minute lesson for Grades 7 to 12 (Araling Panlipunan, Civics, English, Media Literacy). Suggested for ages 12 and up.</p>
+<h3>Learning goals</h3>
+<ul><li>Explain what flood control is and why it matters in the Philippines.</li><li>Describe how public projects should be checked.</li><li>Tell verified facts apart from rumors.</li></ul>
+<h3>Lesson flow</h3>
+<ol><li><b>Hook (5 min):</b> Ask, "Who has been affected by flooding?"</li><li><b>Read (10 min):</b> Students read the posts and timeline.</li><li><b>Vocabulary (10 min):</b> Pairs match the key words to examples.</li><li><b>Discuss (15 min):</b> Use the questions below.</li><li><b>Quiz and exit ticket (10 min):</b> Take the quiz, then write one action a citizen can take.</li></ol>
+<h3>Discussion questions</h3>
+<ul><li>Why does flood control corruption hurt poor communities the most?</li><li>Which safeguard (bidding, inspection, audit, public reporting) is the most important? Why?</li><li>How can you check if a news post about this is reliable?</li><li>What should happen to someone who is found guilty by a court?</li></ul>
+<h3>Class activities</h3>
+<ul><li><b>Barangay project hunt:</b> Find one flood control project near you and list what you can verify.</li><li><b>Fact-check relay:</b> Groups rate three claims as verified, unverified or false, citing sources.</li><li><b>Letter to an official:</b> Write a respectful letter asking for project records.</li></ul>
+<p class="note"><b>Teaching note:</b> Many cases are still under investigation. Remind students that a person is presumed innocent until proven guilty, and keep discussion focused on facts, systems and solutions rather than personal attacks.</p>
+<button class="more" id="printbtn" type="button">Print this lesson</button>
+</section>
+
+<section id="contact" class="block contact">
+<h2 class="sec">About the author and contact</h2>
+<div class="card-c">
+<div class="avatar" aria-hidden="true">JM</div>
+<div>
+<h3>Jazmyn Mendoza</h3>
+<p>BSE Major in Social Studies</p>
+<p><b>Facebook:</b> Jazmyn Mendoza</p>
+<p class="small">Teachers and students are welcome to message with questions, feedback or ideas for new posts.</p>
+</div>
+</div>
+</section>
+
+<section class="help" id="act">
+<h2 class="sec" style="margin-bottom:6px">What you can do</h2>
+<ul>
+<li>Check the flood control projects in your barangay and ask local officials for records.</li>
+<li>Report suspicious or unfinished projects through official complaint channels.</li>
+<li>Follow audit reports from the Commission on Audit.</li>
+<li>Share verified information, and avoid unconfirmed claims.</li>
+</ul>
+</section>
+</main>
+
+<footer><div class="wrap">Created by Jazmyn Mendoza, BSE Major in Social Studies. Baha Watch is an independent explainer blog. Details are summarized and may have changed, so please verify with current news and official sources.</div></footer>
+
+<script>
+document.querySelectorAll('.post').forEach(function(p){
+  var b=p.querySelector('button.more');
+  b.addEventListener('click',function(){
+    var o=p.classList.toggle('open');
+    b.setAttribute('aria-expanded',o);
+    b.textContent=o?'Show less':'Read more';
+  });
+});
+
+var Q=[["What does flood control aim to do?",["Reduce flooding and protect communities","Increase rainfall","Build tourist spots"],0,"Right: dikes, drainage and pumps reduce flood damage."],
+["What is a ghost project?",["A project built twice","A project paid for but reportedly never built","A haunted building"],1,"Ghost projects are paid for on paper but not actually built."],
+["Why does transparency help?",["It lets citizens check how money is used","It makes projects cheaper automatically","It removes the need for audits"],0,"Open records let people spot problems early."],
+["Someone is accused in a case. What should we remember?",["They are guilty already","They are presumed innocent until a court decides","Accusations do not matter"],1,"Fair process matters, even while we demand accountability."]];
+var done=0,pts=0,box=document.getElementById('quizbox');
+Q.forEach(function(q){
+  var d=document.createElement('div');d.className='q';
+  var h='<p>'+q[0]+'</p>';
+  q[1].forEach(function(o,i){h+='<button type="button" class="opt" data-i="'+i+'">'+o+'</button>';});
+  d.innerHTML=h+'<p class="fb" role="status"></p>';
+  d.querySelectorAll('.opt').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=+b.dataset.i,ok=i===q[2];
+      d.querySelectorAll('.opt').forEach(function(x){x.disabled=true;if(+x.dataset.i===q[2])x.classList.add('right');});
+      if(!ok)b.classList.add('wrong');
+      d.querySelector('.fb').textContent=(ok?'Correct. ':'Not quite. ')+q[3];
+      done++;if(ok)pts++;
+      if(done===Q.length)document.getElementById('score').textContent='Your score: '+pts+' out of '+Q.length;
+    });
+  });
+  box.appendChild(d);
+});
+document.getElementById('printbtn').addEventListener('click',function(){window.print();});
+</script>
+</body>
+</html>
